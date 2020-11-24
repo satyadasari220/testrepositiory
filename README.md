@@ -1,2 +1,2 @@
-# testrepositiory
-this is my first repository 
+# test repositiory
+this is my first repository satya  
