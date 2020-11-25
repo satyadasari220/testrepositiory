@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="d47f66ca-3ab4-44b6-80ed-44c786269947" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="testgithubFlow" doc:id="a727e271-e52a-4dca-8753-2cbcb812d067" >
+		<http:listener doc:name="Listener" doc:id="68c1f5a3-a5b0-4830-8970-6a7ee7bb3328" config-ref="HTTP_Listener_config" path="/github"/>
+		<logger level="INFO" doc:name="Logger" doc:id="2d70e47e-3a72-490a-b533-17a8ca888ed6" message="Project flow strated "/>
+		<set-payload value="This is set payload" doc:name="Set Payload" doc:id="ebf1a3a2-da40-42fb-a2ef-77637f29f098" />
+		<logger level="INFO" doc:name="Logger" doc:id="b19fa6ff-bf18-4735-ad8c-73edf1136557" message="Second logger"/>
+	</flow>
+</mule>
